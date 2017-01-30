@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController, NavController } from 'ionic-angular';
+import { MenuController, NavController, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 
@@ -23,8 +23,8 @@ export class TutorialPage {
     })
   }
 
-  onSlideChangeStart(slider) {
-    this.showSkip = !slider.isEnd;
+  onSlideChangeStart(slider: Slides) {
+    this.showSkip = !slider.isEnd();
   }
 
   ionViewDidEnter() {

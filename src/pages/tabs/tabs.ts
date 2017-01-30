@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavParams } from 'ionic-angular';
 
-
 import { CalendarPage } from '../calendar/calendar';
-import { AboutPage } from '../about/about';
 import { MapPage } from '../map/map';
 import { SchedulePage } from '../schedule/schedule';
 import { SpeakerListPage } from '../speaker-list/speaker-list';

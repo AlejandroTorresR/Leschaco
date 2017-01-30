@@ -17,7 +17,7 @@ This is purely a demo of Ionic 2 with TypeScript. It is still in development.
 
 ## Getting Started
 
-* Clone this repository.
+* Clone this repository: `git clone https://github.com/driftyco/ionic-conference-app.git`.
 * Want to use TypeScript? Both the `master` branch and the `typescript` branch now use TypeScript.
 * Run `npm install` from the project root.
 * Install the ionic CLI (`npm install -g ionic`)
@@ -85,8 +85,7 @@ ionic-conference-app/
 |    |    ├── app.component.ts
 |    |    └── app.module.ts
 |    |    └── app.template.html
-|    |    └── main.dev.ts
-|    |    └── main.prod.ts
+|    |    └── main.ts
 |    |
 |    |-- assets/
 |    |    ├── data/
@@ -149,6 +148,11 @@ ionic-conference-app/
 │    │    │    ├── speaker-list.html     * SpeakerListPage template
 │    │    │    └── speaker-list.ts       * SpeakerListPage code
 │    │    │    └── speaker-list.scss     * SpeakerListPage stylesheet
+|    |    |
+│    │    │── support/                   * Support page
+│    │    │    ├── support.html          * SupportPage template
+│    │    │    └── support.ts            * SupportPage code
+│    │    │    └── support.scss          * SupportPage stylesheet
 │    │    │
 │    │    │── tabs/                      * Tabs page
 │    │    │    ├── tabs.html             * TabsPage template

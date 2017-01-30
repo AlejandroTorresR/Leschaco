@@ -25,6 +25,27 @@ import { SupportPage } from '../pages/support/support';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'APP_ID',
+  },
+  'push': {
+    'sender_id': '341289862261',
+    'pluginConfig': {
+      'ios': {
+        'badge': true,
+        'sound': true
+      },
+      'android': {
+        'iconColor': '#343434'
+      }
+    }
+  }
+};
+
 
 @NgModule({
   declarations: [
@@ -47,7 +68,8 @@ import { UserData } from '../providers/user-data';
     SupportPage
   ],
   imports: [
-    IonicModule.forRoot(ConferenceApp)
+    IonicModule.forRoot(ConferenceApp),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
