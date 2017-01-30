@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 
-import { AlertController, App, FabContainer, ItemSliding, List, ModalController, NavController, LoadingController } from 'ionic-angular';
+import { AlertController, App, FabContainer, ItemSliding, List, ModalController, NavController, LoadingController, MenuController } from 'ionic-angular';
 
 /*
   To learn how to use third party libs in an
@@ -34,6 +34,7 @@ export class SchedulePage {
   confDate: string;
 
   constructor(
+    private menu: MenuController,
     public alertCtrl: AlertController,
     public app: App,
     public loadingCtrl: LoadingController,
@@ -42,6 +43,10 @@ export class SchedulePage {
     public confData: ConferenceData,
     public user: UserData,
   ) {}
+
+  ionViewDidEnter() {
+    this.menu.swipeEnable(true);
+  }
 
   ionViewDidLoad() {
     this.app.setTitle('Schedule');

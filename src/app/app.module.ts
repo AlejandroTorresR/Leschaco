@@ -30,7 +30,7 @@ import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 
 const cloudSettings: CloudSettings = {
   'core': {
-    'app_id': 'APP_ID',
+    'app_id': 'a2a619b2',
   },
   'push': {
     'sender_id': '341289862261',

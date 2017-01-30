@@ -68,16 +68,27 @@ export class ConferenceApp {
     public storage: Storage
   ) {
 
-    // Check if the user has already seen the tutorial
-    this.storage.get('hasSeenTutorial')
-      .then((hasSeenTutorial) => {
-        if (hasSeenTutorial) {
-          this.rootPage = TabsPage;
+    // Check if the user has already logged in
+    this.storage.get('hasLoggedIn')
+      .then((hasLoggedIn) => {
+        if (hasLoggedIn) {
+          this.rootPage = SchedulePage;
         } else {
-          this.rootPage = TutorialPage;
+          this.rootPage = LoginPage;
         }
         this.platformReady()
       })
+
+    // Check if the user has already seen the tutorial
+    // this.storage.get('hasSeenTutorial')
+    //   .then((hasSeenTutorial) => {
+    //     if (hasSeenTutorial) {
+    //       this.rootPage = TabsPage;
+    //     } else {
+    //       this.rootPage = TutorialPage;
+    //     }
+    //     this.platformReady()
+    //   })
 
     // load the conference data
     confData.load();
@@ -89,6 +100,7 @@ export class ConferenceApp {
 
     this.listenToLoginEvents();
 
+    // Push notifications
     this.push.register().then((t: PushToken) => {
       return this.push.saveToken(t);
       }).then((t: PushToken) => {
@@ -120,12 +132,17 @@ export class ConferenceApp {
       // Give the menu time to close before changing to logged out
       setTimeout(() => {
         this.userData.logout();
+        this.openLogin()
       }, 1000);
     }
   }
 
   openTutorial() {
     this.nav.setRoot(TutorialPage);
+  }
+
+  openLogin() {
+    this.nav.setRoot(LoginPage);
   }
 
   listenToLoginEvents() {

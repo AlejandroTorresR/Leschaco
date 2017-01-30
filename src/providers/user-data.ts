@@ -30,30 +30,30 @@ export class UserData {
     }
   };
 
-  login(username: string) {
+  login(email: string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.setUsername(username);
+    this.setUsername(email);
     this.events.publish('user:login');
   };
 
-  signup(username: string) {
+  signup(email: string) {
     this.storage.set(this.HAS_LOGGED_IN, true);
-    this.setUsername(username);
+    this.setUsername(email);
     this.events.publish('user:signup');
   };
 
   logout() {
     this.storage.remove(this.HAS_LOGGED_IN);
-    this.storage.remove('username');
+    this.storage.remove('email');
     this.events.publish('user:logout');
   };
 
-  setUsername(username: string) {
-    this.storage.set('username', username);
+  setUsername(email: string) {
+    this.storage.set('email', email);
   };
 
   getUsername() {
-    return this.storage.get('username').then((value) => {
+    return this.storage.get('email').then((value) => {
       return value;
     });
   };
